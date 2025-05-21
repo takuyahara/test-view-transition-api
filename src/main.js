@@ -40,3 +40,15 @@ document.querySelector('.without-transition > .delete').addEventListener('click'
   }, { once: true });
   e.target.parentElement.style.animation = `animate-out ease-out 15s`;
 }, { once: true })
+
+document.querySelector('.with-transition > .delete').addEventListener('click', e => {
+  if (!document.startViewTransition) {
+    e.target.parentElement.remove();
+    return;
+  }
+
+  e.target.parentElement.style.viewTransitionName = 'with-transition';
+  document.startViewTransition(() => {
+    e.target.parentElement.remove();
+  });
+})

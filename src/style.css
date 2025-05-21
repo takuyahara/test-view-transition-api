@@ -114,3 +114,7 @@ button.delete {
     translate: 0 -200px;
   }
 }
+
+::view-transition-old(with-transition):only-child {
+  animation: animate-out ease-out 15s;
+}
