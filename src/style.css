@@ -103,3 +103,14 @@ button.delete {
     background-color: #f9f9f9;
   }
 }
+
+@keyframes animate-out {
+  0% {
+    opacity: 1;
+    translate: 0 0;
+  }
+  100% {
+    opacity: 0;
+    translate: 0 -200px;
+  }
+}

@@ -33,3 +33,10 @@ document.querySelector('#app').innerHTML = `
 for (const el of document.querySelectorAll('.counter')) {
   setupCounter(el)
 }
+
+document.querySelector('.without-transition > .delete').addEventListener('click', e => {
+  e.target.parentElement.addEventListener('animationend', e => {
+    e.target.remove();
+  }, { once: true });
+  e.target.parentElement.style.animation = `animate-out ease-out 15s`;
+}, { once: true })
